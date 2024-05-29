@@ -1,4 +1,4 @@
-package fr.nolanm.mappicker
+package fr.nolanm.mappicker.views
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,12 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -28,6 +28,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import fr.nolanm.mappicker.viewsmodels.MainActivityViewModel
 import fr.nolanm.mappicker.ui.theme.MapPickerTheme
 
 class MainActivity : ComponentActivity() {
@@ -52,12 +53,12 @@ fun Greeting(modifier: Modifier = Modifier, viewModel: MainActivityViewModel) {
     var home by remember { mutableStateOf("") }
     var away by remember { mutableStateOf("") }
 
-    // TODO : Adapter la taille de la colonne en fonction du pavé numérique
     Column (
         modifier = Modifier
+            .imePadding()
             .fillMaxSize()
             .paint(
-                painterResource(id = R.drawable.main_background),
+                painterResource(id = viewModel.mainBackgroundId),
                 contentScale = ContentScale.FillBounds
             ),
         verticalArrangement = Arrangement.Center,
@@ -82,7 +83,12 @@ fun Greeting(modifier: Modifier = Modifier, viewModel: MainActivityViewModel) {
         )
         
         OutlinedButton(
-            onClick = { /*TODO*/ }
+            onClick = {
+                /*TODO :
+                    - Sauvegarder les données des inputs
+                    - Naviguer vers une prochaine page
+            */
+            }
         ) {
             Text(text = "Valider")
         }
