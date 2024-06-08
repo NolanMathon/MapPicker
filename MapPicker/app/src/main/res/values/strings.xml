@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MapPicker</string>
+    <string name="title_activity_side_picker">SidePickerActivity</string>
 </resources>

@@ -1,4 +1,4 @@
 package fr.nolanm.mappicker.viewsmodels;
 
-public class SidePickerViewModel {
+public class SidePickerActivityViewModel {
 }
